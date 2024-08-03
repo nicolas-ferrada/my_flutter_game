@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'config/initial_configurations.dart';
-import 'my_game.dart';
+import 'game/my_game.dart';
 
 void main() {
   InitialConfigurations.init();
