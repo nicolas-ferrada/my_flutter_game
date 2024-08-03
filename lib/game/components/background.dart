@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flame/components.dart';
 import 'package:flame/flame.dart';
-import 'package:my_flutter_game/game/my_game.dart';
+import '../my_game.dart';
 
 import '../utils/assets.dart';
 
