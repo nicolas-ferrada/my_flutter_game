@@ -11,7 +11,11 @@ class MyGame extends FlameGame {
   FutureOr<void> onLoad() {
     add(Background());
 
-    add(Player(currentPlayerMovement: PlayerMovement.run));
+    add(Player(
+      currentPlayerMovement: PlayerMovement.idle,
+      playerPosition: Vector2(50, 492),
+      playerSize: Vector2(120, 120),
+    ));
 
     return super.onLoad();
   }

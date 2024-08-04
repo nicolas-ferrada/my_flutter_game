@@ -11,23 +11,33 @@ import 'movement/player_movement_types.dart';
 class Player extends SpriteAnimationGroupComponent<PlayerMovement>
     with HasGameRef<MyGame> {
   final PlayerMovement currentPlayerMovement;
+  final Vector2 playerPosition;
+  final Vector2 playerSize;
 
   Player({
     required this.currentPlayerMovement,
+    required this.playerPosition,
+    required this.playerSize,
   });
 
   @override
   FutureOr<void> onLoad() async {
-    // Load sprite
+    // Load player sprite
     final spriteSheet = await SpriteLoader.load(
       assetPath: Assets.catSheet,
       srcSize: Vector2.all(32),
     );
 
-    // Load animations
+    // Load player animations
     animations = await PlayerAnimations.loadAnimations(
       spriteSheet: spriteSheet,
     );
+
+    // Set player size from the constructor
+    size = playerSize;
+
+    // Set player position from the constructor
+    position = playerPosition;
 
     // Set current animation from the constructor
     current = currentPlayerMovement;
