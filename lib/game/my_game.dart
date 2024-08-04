@@ -10,7 +10,9 @@ class MyGame extends FlameGame {
   @override
   FutureOr<void> onLoad() {
     add(Background());
+
     add(Player(currentPlayerMovement: PlayerMovement.run));
+
     return super.onLoad();
   }
 }

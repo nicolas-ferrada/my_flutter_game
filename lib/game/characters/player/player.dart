@@ -1,12 +1,11 @@
 import 'dart:async';
 
 import 'package:flame/components.dart';
-import 'package:flame/flame.dart';
-import 'package:flame/sprite.dart';
-import 'package:my_flutter_game/game/characters/player/animations/player_animations.dart';
-import 'package:my_flutter_game/game/my_game.dart';
 
+import '../../my_game.dart';
 import '../../utils/assets.dart';
+import '../../utils/sprite_loader.dart';
+import 'animations/player_animations.dart';
 import 'movement/player_movement_types.dart';
 
 class Player extends SpriteAnimationGroupComponent<PlayerMovement>
@@ -19,17 +18,20 @@ class Player extends SpriteAnimationGroupComponent<PlayerMovement>
 
   @override
   FutureOr<void> onLoad() async {
-    final sprite = await _loadSprite(Assets.catSheet);
-    await PlayerAnimations.loadAnimations(spriteSheet: sprite);
-    animations = PlayerAnimations.animationSet.animations;
-    current = currentPlayerMovement;
-    return super.onLoad();
-  }
-
-  Future<SpriteSheet> _loadSprite(String playerSprite) async {
-    return SpriteSheet(
-      image: await Flame.images.load(playerSprite),
+    // Load sprite
+    final spriteSheet = await SpriteLoader.load(
+      assetPath: Assets.catSheet,
       srcSize: Vector2.all(32),
     );
+
+    // Load animations
+    animations = await PlayerAnimations.loadAnimations(
+      spriteSheet: spriteSheet,
+    );
+
+    // Set current animation from the constructor
+    current = currentPlayerMovement;
+
+    return super.onLoad();
   }
 }

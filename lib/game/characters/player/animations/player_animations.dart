@@ -1,13 +1,10 @@
 import 'dart:async';
 
-import 'package:flame/components.dart';
 import 'package:flame/sprite.dart';
 import '../movement/player_movement_types.dart';
 
 class PlayerAnimations {
-  static late final SpriteAnimationGroupComponent<PlayerMovement> animationSet;
-
-  static Future<void> loadAnimations({
+  static Future<Map<PlayerMovement, SpriteAnimation>> loadAnimations({
     required SpriteSheet spriteSheet,
   }) async {
     final idleAnimation = spriteSheet.createAnimation(
@@ -40,14 +37,12 @@ class PlayerAnimations {
       to: 4,
     );
 
-    animationSet = SpriteAnimationGroupComponent<PlayerMovement>(
-      animations: {
-        PlayerMovement.idle: idleAnimation,
-        PlayerMovement.walk: walkAnimation,
-        PlayerMovement.run: runAnimation,
-        PlayerMovement.jump: jumpAnimation,
-        PlayerMovement.fall: fallAnimation,
-      },
-    );
+    return {
+      PlayerMovement.idle: idleAnimation,
+      PlayerMovement.walk: walkAnimation,
+      PlayerMovement.run: runAnimation,
+      PlayerMovement.jump: jumpAnimation,
+      PlayerMovement.fall: fallAnimation,
+    };
   }
 }
