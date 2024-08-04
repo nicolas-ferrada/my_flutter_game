@@ -1,3 +1,5 @@
 class Assets {
-  static const String background = 'living/living.png';
+  static const String kitchen = 'environments/kitchen/kitcken.png';
+
+  static const String catSheet = 'characters/cat/cat-sheet.png';
 }

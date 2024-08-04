@@ -10,7 +10,7 @@ class Background extends SpriteComponent with HasGameRef<MyGame> {
   @override
   FutureOr<void> onLoad() async {
     // Load the background image
-    final backgroundImage = await Flame.images.load(Assets.background);
+    final backgroundImage = await Flame.images.load(Assets.kitchen);
 
     // Set the sprite for the component
     sprite = Sprite(backgroundImage);
