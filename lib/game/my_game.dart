@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flame/game.dart';
 
-import 'components/background.dart';
+import 'environments/background.dart';
 
 class MyGame extends FlameGame {
   @override
