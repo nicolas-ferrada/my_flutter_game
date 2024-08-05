@@ -4,7 +4,7 @@ import 'package:flame/components.dart';
 
 import '../../my_game.dart';
 import '../../utils/assets.dart';
-import '../../utils/sprite_loader.dart';
+import '../../utils/assets_loader.dart';
 import 'animations/player_animations.dart';
 import 'movement/player_movement_types.dart';
 
