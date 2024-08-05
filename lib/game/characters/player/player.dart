@@ -23,7 +23,7 @@ class Player extends SpriteAnimationGroupComponent<PlayerMovement>
   @override
   FutureOr<void> onLoad() async {
     // Load player sprite
-    final spriteSheet = await SpriteLoader.load(
+    final spriteSheet = await AssetsLoader.loadSprite(
       assetPath: Assets.catSheet,
       srcSize: Vector2.all(32),
     );

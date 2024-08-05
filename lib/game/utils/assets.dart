@@ -1,5 +1,9 @@
 class Assets {
-  static const String kitchen = 'levels/kitchen/kitchen.png';
+  static const String basePath = 'assets/';
 
-  static const String catSheet = 'characters/cat/cat-sheet.png';
+  // Level
+  static const String kitchenLevel = 'tiles/kitchen-level.tmx';
+
+  // Sprite sheets
+  static const String catSheet = 'images/characters/cat/cat-sheet.png';
 }
