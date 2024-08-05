@@ -10,6 +10,6 @@
 </data>
  </layer>
  <imagelayer id="2" name="kitchen" offsetx="-1.75" offsety="0">
-  <image source="./images/levels/kitchen/kitchen.png" width="436" height="155"/>
+  <image source="../images/levels/kitchen/kitchen.png" width="436" height="155"/>
  </imagelayer>
 </map>
